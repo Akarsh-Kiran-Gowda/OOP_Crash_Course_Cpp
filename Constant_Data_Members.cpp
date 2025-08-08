@@ -16,7 +16,7 @@ public:
     int public_var;
     //constructor
     MyClass(int cPri, int pri, int cPub, int pub):
-        const_private_var(cPri),private_var(pri), const_public_var(cPub),public_var()pub  {}
+        const_private_var(cPri), private_var(pri), const_public_var(cPub), public_var(pub) {}
 
     int getConstantPriVar() {
         return const_private_var;
@@ -39,16 +39,13 @@ int main() {
     MyClass myObj(1, 2, 3, 4);
 
     cout << myObj.getConstantPriVar() << endl;
-    myObj.setConstantPriVar();
+    myObj.setConstantPriVar(10);                 //Error 1: Cannot modify const member
 
     cout << myObj.const_public_var << endl;
-    myObj.const_public_var = 3;                 //Error 2: Assignment to constant data member
+    // myObj.const_public_var = 3;               //Error 2: Assignment to constant data member
 
     cout << myObj.private_var << endl;
     myObj.public_var = 3;
 
     return 0;
-
-return 0;
 }
-
